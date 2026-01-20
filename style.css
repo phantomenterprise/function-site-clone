@@ -1,0 +1,232 @@
+/*
+Theme Name: Function Health Clone
+Theme URI: https://www.functionhealth.com/
+Author: OpenAI
+Description: A customizable WordPress theme inspired by Function Health.
+Version: 1.0.0
+Text Domain: function-health-clone
+*/
+
+:root {
+  --fhc-bg: #0b0f1a;
+  --fhc-text: #eef2ff;
+  --fhc-muted: #a3acc4;
+  --fhc-accent: #5dd6ff;
+  --fhc-surface: #141a2e;
+  --fhc-border: #25304f;
+  --fhc-highlight: #1f2b4a;
+  --fhc-success: #52f2a9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--fhc-bg);
+  color: var(--fhc-text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.fhc-container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+.fhc-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--fhc-border);
+}
+
+.fhc-section h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 0 0 16px;
+}
+
+.fhc-section p {
+  color: var(--fhc-muted);
+}
+
+.fhc-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  background: var(--fhc-accent);
+  color: #031122;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fhc-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(93, 214, 255, 0.25);
+}
+
+.fhc-button.secondary {
+  background: transparent;
+  color: var(--fhc-text);
+  border-color: var(--fhc-border);
+}
+
+.fhc-hero {
+  padding: 140px 0 120px;
+  background: radial-gradient(circle at top, rgba(93, 214, 255, 0.2), transparent 50%);
+}
+
+.fhc-hero .fhc-hero-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.fhc-hero h1 {
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  margin-bottom: 20px;
+}
+
+.fhc-hero p {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+}
+
+.fhc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(93, 214, 255, 0.15);
+  color: var(--fhc-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.fhc-card-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 40px;
+}
+
+.fhc-card {
+  background: var(--fhc-surface);
+  border: 1px solid var(--fhc-border);
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.fhc-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.fhc-stats {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fhc-stat {
+  background: var(--fhc-highlight);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.fhc-stat strong {
+  font-size: 2rem;
+  display: block;
+}
+
+.fhc-pricing {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.fhc-price {
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+  color: var(--fhc-success);
+  margin: 0;
+}
+
+.fhc-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 16px;
+}
+
+.fhc-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: var(--fhc-muted);
+}
+
+.fhc-testimonial {
+  display: grid;
+  gap: 24px;
+}
+
+.fhc-testimonial blockquote {
+  margin: 0;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--fhc-surface);
+  border: 1px solid var(--fhc-border);
+}
+
+.fhc-faq-item {
+  border-bottom: 1px solid var(--fhc-border);
+  padding: 20px 0;
+}
+
+.fhc-footer {
+  padding: 80px 0;
+}
+
+.fhc-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.fhc-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.fhc-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--fhc-border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .fhc-section {
+    padding: 72px 0;
+  }
+}
