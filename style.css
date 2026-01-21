@@ -1,0 +1,341 @@
+/*
+Theme Name: Function Health Clone
+Theme URI: https://www.functionhealth.com/
+Author: OpenAI
+Description: A customizable WordPress theme inspired by Function Health.
+Version: 1.0.0
+Text Domain: function-health-clone
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --fhc-bg: #f7f8fb;
+  --fhc-text: #0b0f1a;
+  --fhc-muted: #5b6477;
+  --fhc-accent: #00bcd4;
+  --fhc-surface: #ffffff;
+  --fhc-border: #e2e6ef;
+  --fhc-highlight: #eef3fb;
+  --fhc-success: #2ac78b;
+  --fhc-dark: #0d1426;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--fhc-bg);
+  color: var(--fhc-text);
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(0, 188, 212, 0.08), transparent 45%);
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.fhc-container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+.fhc-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--fhc-border);
+}
+
+.fhc-section--alt {
+  background: rgba(238, 243, 251, 0.6);
+}
+
+.fhc-section h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 0 0 16px;
+}
+
+.fhc-section p {
+  color: var(--fhc-muted);
+}
+
+.fhc-section-header {
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.fhc-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  background: var(--fhc-accent);
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fhc-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 188, 212, 0.25);
+}
+
+.fhc-button.secondary {
+  background: transparent;
+  color: var(--fhc-dark);
+  border-color: var(--fhc-border);
+}
+
+.fhc-hero {
+  padding: 140px 0 120px;
+  background: radial-gradient(circle at top, rgba(0, 188, 212, 0.18), transparent 55%);
+}
+
+.fhc-hero .fhc-hero-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.fhc-hero h1 {
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  margin-bottom: 20px;
+}
+
+.fhc-hero p {
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+}
+
+.fhc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(0, 188, 212, 0.12);
+  color: var(--fhc-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.fhc-card-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 40px;
+}
+
+.fhc-card {
+  background: var(--fhc-surface);
+  border: 1px solid var(--fhc-border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 45px rgba(12, 18, 36, 0.06);
+}
+
+.fhc-hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.fhc-hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -20% auto;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.2), transparent 70%);
+}
+
+.fhc-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.fhc-stats {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fhc-stat {
+  background: var(--fhc-highlight);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: inset 0 0 0 1px rgba(13, 20, 38, 0.04);
+}
+
+.fhc-stat strong {
+  font-size: 2rem;
+  display: block;
+}
+
+.fhc-pricing {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.fhc-price {
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+  color: var(--fhc-success);
+  margin: 0;
+}
+
+.fhc-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 16px;
+}
+
+.fhc-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: var(--fhc-muted);
+}
+
+.fhc-testimonial {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.fhc-testimonial blockquote {
+  margin: 0;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--fhc-surface);
+  border: 1px solid var(--fhc-border);
+  box-shadow: 0 16px 40px rgba(12, 18, 36, 0.08);
+}
+
+.fhc-faq-item {
+  border-bottom: 1px solid var(--fhc-border);
+  padding: 20px 0;
+}
+
+.fhc-faq-item h3 {
+  margin: 0 0 8px;
+}
+
+.fhc-footer {
+  padding: 80px 0;
+}
+
+.fhc-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.fhc-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.fhc-badge {
+  background: rgba(13, 20, 38, 0.04);
+  border: 1px solid var(--fhc-border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.fhc-announcement {
+  background: var(--fhc-dark);
+  color: #ffffff;
+  padding: 10px 0;
+  font-size: 0.85rem;
+}
+
+.fhc-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(247, 248, 251, 0.9);
+  border-bottom: 1px solid var(--fhc-border);
+  backdrop-filter: blur(12px);
+}
+
+.fhc-header .fhc-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.fhc-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fhc-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  color: var(--fhc-muted);
+  font-weight: 500;
+}
+
+.fhc-nav a:hover {
+  color: var(--fhc-dark);
+}
+
+.fhc-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.fhc-header-actions .fhc-button {
+  padding: 10px 20px;
+}
+
+.fhc-header .fhc-button.secondary {
+  border-color: transparent;
+}
+
+@media (max-width: 720px) {
+  .fhc-section {
+    padding: 72px 0;
+  }
+
+  .fhc-header .fhc-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .fhc-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
